@@ -110,7 +110,14 @@ header p {
 .milestone-card:focus {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 48, 87, 0.2);
-  outline: none;
+}
+
+.milestone-card:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #00c7fd;
+  outline-offset: 3px;
 }
 
 .milestone-card img {
@@ -182,6 +189,138 @@ header p {
   padding: 18px 20px 30px;
 }
 
+/* Shared styles for the sections below the timeline */
+.focus-section {
+  background: #ffffff;
+  padding: 76px 24px 84px;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #0071c5;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.section-heading h2,
+.newsletter h2 {
+  color: #003c71;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+.section-heading > p:last-child,
+.newsletter > div > p:last-child {
+  color: #52616d;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.focus-cards {
+  margin: 0 auto;
+}
+
+.focus-card {
+  width: 100%;
+  min-height: 310px;
+  padding: 30px;
+  border-top: 5px solid #00c7fd;
+  background: #f4f8fb;
+  box-shadow: 0 4px 14px rgba(0, 48, 87, 0.08);
+}
+
+.focus-number i {
+  margin-inline-end: 6px;
+}
+
+.focus-number {
+  color: #0071c5;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.focus-card h3 {
+  color: #1d252c;
+  font-size: 1.35rem;
+  margin: 18px 0 12px;
+}
+
+.focus-card p {
+  color: #52616d;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.focus-card a {
+  color: #0071c5;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.focus-card a:hover,
+.focus-card a:focus {
+  color: #003c71;
+  text-decoration: underline;
+}
+
+.newsletter {
+  padding: 58px 24px;
+  background: #003c71;
+  color: white;
+}
+
+.newsletter h2,
+.newsletter .eyebrow {
+  color: white;
+}
+
+.newsletter > div > p:last-child {
+  color: #d9edf7;
+}
+
+.newsletter .form-label {
+  color: white;
+  font-weight: 700;
+}
+
+.newsletter .btn-info {
+  color: #003c71;
+  font-weight: 800;
+}
+
+.site-footer {
+  padding: 24px;
+  background: #1d252c;
+  color: #d9edf7;
+  font-size: 0.9rem;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.site-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  text-decoration: underline;
+}
+
 /* Tablet layout: show approximately two cards */
 @media (max-width: 900px) and (min-width: 601px) {
   .milestone-card {
@@ -236,6 +375,22 @@ header p {
 
   .milestone-card:last-child {
     margin-bottom: 0;
+  }
+
+  .focus-section {
+    padding: 56px 20px 60px;
+  }
+
+  .newsletter {
+    display: block;
+  }
+
+  .focus-card {
+    min-height: 0;
+  }
+
+  .newsletter {
+    padding: 48px 20px;
   }
 }
 
